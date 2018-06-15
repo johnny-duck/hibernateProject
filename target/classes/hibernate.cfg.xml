@@ -9,10 +9,12 @@
         <!--property name="hibernate.default_schema">test</property-->
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">student</property>
-        <property name="hibernate.hbm2ddl.auto">validate</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
         <mapping class="Student"/>
         <mapping class="entity.User"/>
         <mapping class="entity.Post"/>
+        <mapping class="entity.Topic"/>
+        <mapping class="entity.Thread"/>
     </session-factory>
 </hibernate-configuration>

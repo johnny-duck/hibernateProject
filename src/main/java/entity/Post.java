@@ -10,10 +10,13 @@ public class Post {
     @Column(nullable = false)
     private String content;
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
-    User author;
+    private User author;
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Thread.class)
+    private Thread thread;
 
-    public Post(String content, User author) {
+    public Post(String content, User author, Thread thread) {
         this.content = content;
+        this.thread = thread;
         this.author = author;
     }
 

@@ -1,4 +1,4 @@
-import entity.Post;
+
 import entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
