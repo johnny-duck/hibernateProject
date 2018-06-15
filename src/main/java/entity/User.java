@@ -12,6 +12,9 @@ public class User {
     private String username;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
     private List<Post> myPosts;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
+    private List<Topic> myTopics;
+    @Column(nullable = false)
     private String password;
 
     public User(String username, String password) {
