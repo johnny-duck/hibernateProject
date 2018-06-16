@@ -14,8 +14,8 @@ public class Thread {
     private String title;
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
     private User creator;
-    @OneToMany(fetch = FetchType.LAZY, targetEntity = Post.class)
-    private List<Post> threadPosts;
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = Topic.class, mappedBy = "thread")
+    private List<Topic> topics;
 
 
     public Thread(Topic topic, String title, User creator) {

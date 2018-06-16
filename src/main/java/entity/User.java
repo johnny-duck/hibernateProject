@@ -14,6 +14,8 @@ public class User {
     private List<Post> myPosts;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
     private List<Topic> myTopics;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "creator")
+    private List<Thread> myThreads;
     @Column(nullable = false)
     private String password;
 

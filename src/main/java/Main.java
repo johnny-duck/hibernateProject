@@ -9,8 +9,11 @@ public class Main {
         Configuration conf = new Configuration().configure();
         SessionFactory factory = conf.buildSessionFactory();
         Session s = factory.openSession();
-
-        User x = s.get(User.class, 0);
+        s.beginTransaction();
+        User user = new User("nume", "parola");
+        s.save(user);
+        s.getTransaction().commit();
+        User x = s.get(User.class, 1);
         x.setNameToUpperCase();
         s.beginTransaction();
         s.update(x);
