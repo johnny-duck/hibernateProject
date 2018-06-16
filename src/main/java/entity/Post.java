@@ -11,12 +11,12 @@ public class Post {
     private String content;
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
     private User author;
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Thread.class)
-    private Thread thread;
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Topic.class)
+    private Topic topic;
 
-    public Post(String content, User author, Thread thread) {
+    public Post(String content, User author, Topic topic) {
         this.content = content;
-        this.thread = thread;
+        this.topic = topic;
         this.author = author;
     }
 
