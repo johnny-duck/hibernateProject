@@ -23,4 +23,10 @@ public class Post {
     public Post() {
 
     }
+
+    @Override
+    public String toString() {
+        return "[ #" + id + ", " + content + ", " + author +
+                ", " + topic+ " ]";
+    }
 }

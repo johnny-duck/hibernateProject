@@ -22,9 +22,24 @@ public class Topic {
     public Topic() {
     }
 
-    public Topic(String subject, User author, Thread thread) {
+    public Topic(String subject, String description, User author, Thread thread) {
         this.subject = subject;
         this.author = author;
         this.thread = thread;
+        this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "[ #" + id + ", " + subject + ", " + description
+                + ", " + author + thread + " ]";
+    }
+
+    public String toStringPosts() {
+        return post.toString();
     }
 }
