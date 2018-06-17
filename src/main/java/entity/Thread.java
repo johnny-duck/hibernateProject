@@ -8,8 +8,6 @@ public class Thread {
     @Id
     @GeneratedValue
     private int id;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Topic.class)
-    private Topic topic;
     @Column(nullable = false)
     private String title;
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = User.class)
@@ -18,8 +16,7 @@ public class Thread {
     private List<Topic> topics;
 
 
-    public Thread(Topic topic, String title, User creator) {
-        this.topic = topic;
+    public Thread(String title, User creator) {
         this.title = title;
         this.creator = creator;
     }
@@ -27,4 +24,18 @@ public class Thread {
     public Thread() {
 
     }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "[ #" + id + ", " + title + ", " + creator +" ]";
+    }
+
+    public String toStringTopics() {
+        return topics.toString();
+    }
+
 }
