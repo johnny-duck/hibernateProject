@@ -2,6 +2,12 @@ package entity;
 
 import javax.persistence.*;
 import java.util.List;
+@NamedQueries({
+        @NamedQuery(
+                name = "get_topic_by_id",
+                query = "from Topic where id = :topic_id"
+        )
+})
 
 @Entity
 public class Topic {

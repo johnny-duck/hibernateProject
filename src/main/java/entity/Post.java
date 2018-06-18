@@ -1,7 +1,12 @@
 package entity;
 
 import javax.persistence.*;
-
+@NamedQueries({
+        @NamedQuery(
+                name = "get_post_by_id",
+                query = "from Post where id = :post_id"
+        )
+})
 @Entity
 public class Post {
     @Id

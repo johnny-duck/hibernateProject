@@ -2,6 +2,12 @@ package entity;
 
 import javax.persistence.*;
 import java.util.List;
+@NamedQueries({
+        @NamedQuery(
+                name = "get_thread_by_id",
+                query = "from Thread where id = : thread_id"
+        )
+})
 
 @Entity
 public class Thread {
